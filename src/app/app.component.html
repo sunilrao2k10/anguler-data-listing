@@ -1,0 +1,31 @@
+
+<h1>{{ title }}</h1>
+
+<div class="container">
+  <!--
+  <div class="search-item"> 
+    <input type="text" value="" [(ngModel)]="searchText" (input)="filteredData()">
+    {{searchText}}
+  </div>
+  -->
+  <div class="listing-page">
+    <div class="listing-wrap">
+        <div class="listing" *ngFor="let selected of selectedLocation | filter : searchText">    
+            <img [src]="selected?.mainPhotoUrl" alt="">         
+            <h3>City: {{selected?.name}}</h3>
+            <h4>Country: {{selected?.countryFullName}}</h4>      
+            <h5>MAX Par: {{selected?.maxParticipants}}</h5>
+            <p>Rate: {{selected?.ratePerHour}}</p>
+          </div>
+    </div>    
+    <div class="map">
+          <!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+    <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker *ngFor="let list of listingData; let index = index;" [latitude]="list.lat" [longitude]="list.lon"
+          (markerClick)='didTapOnMarker($event, index, list.id, list)' [iconUrl]="getStatusIcon(index, list)">
+        </agm-marker>
+      </agm-map>
+    </div>
+  </div>
+</div>

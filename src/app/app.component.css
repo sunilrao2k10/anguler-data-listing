@@ -1,0 +1,43 @@
+agm-map {
+    height: 300px;
+  }
+  body{
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  h1,h2,h3,h4,h5,h6,p{
+      margin: 0;
+      padding: 0; 
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  h3,h4,h5{
+      margin: 5px 0;
+  }
+  img {
+      max-width: 100%;
+  }
+  .listing-page{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .map {
+      width: 600px;
+      margin-left: auto;
+  }
+  .listing {
+      background: #f1f1f14d;
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+      width: 250px;
+      margin: 10px 10px;
+      padding: 10px;
+  }
+  .listing-page{
+      display: flex;     
+  }
+  .listing-wrap{
+      display: flex;
+      flex-wrap: wrap;
+  }
+  .listing-wrap, .map{
+    width: 50%;
+  }
